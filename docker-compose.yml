@@ -1,0 +1,18 @@
+services:
+  host:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      HOST__SERVER__ADDR: ":8080"
+      HOST__SERVER__SESSION_SECRET: "change-me-to-something-random"
+      HOST__OAUTH__PROVIDER: "google"
+      HOST__OAUTH__CLIENT_ID: ""
+      HOST__OAUTH__CLIENT_SECRET: ""
+      HOST__OAUTH__REDIRECT_URL: "http://localhost:8080/auth/callback"
+      HOST__OAUTH__SCOPES: "https://www.googleapis.com/auth/userinfo.email"
+      HOST__AUTH__MODE: "any"
+      # HOST__AUTH__ALLOWED_EMAILS: "user@example.com"
+      # HOST__AUTH__ALLOWED_DOMAINS: "example.com"
+    volumes:
+      - ./public:/public

@@ -1,0 +1,16 @@
+[server]
+addr = ":8080"
+static_dir = "./public"
+session_secret = "change-me"
+
+[oauth]
+provider = "google"
+client_id = ""
+client_secret = ""
+redirect_url = "http://localhost:8080/auth/callback"
+scopes = ["https://www.googleapis.com/auth/userinfo.email"]
+
+[auth]
+mode = "whitelist"     # "any" | "whitelist"
+allowed_emails = []    # specific emails
+allowed_domains = []   # e.g. ["company.com"]
